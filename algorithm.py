@@ -14,3 +14,6 @@ birthYear = input("Enter the last 2 digits of your birth year: ")
 
 passwordv1 = generate_password(company_name, birthYear)
 print("Generated password:", passwordv1) #step 3 of the password generation. Concatenates step 1 and 2.
+
+password_upper = passwordv1.upper()
+print(passwordv1 + password_upper)
