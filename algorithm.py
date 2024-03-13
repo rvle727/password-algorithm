@@ -13,7 +13,17 @@ print(company_name) #result of step 1
 birthYear = input("Enter the last 2 digits of your birth year: ")
 
 passwordv1 = generate_password(company_name, birthYear)
-print("Generated password:", passwordv1) #step 3 of the password generation. Concatenates step 1 and 2.
+print("Password draft:", passwordv1) #step 3 of the password generation. Concatenates step 1 and 2.
 
 password_upper = passwordv1.upper()
-print(passwordv1 + password_upper)
+
+digit_symbols = {'0': ')', '1': '!', '2': '@', '3': '#', '4': '$', '5': '%', '6': '^', '7': '&', '8': '*', '9': '('} #Created dictionary to map each symbol to it's digit
+
+shifted_password_upper = ""
+for char in password_upper:
+    if char.isdigit():
+        shifted_password_upper += digit_symbols[char]  # Replace the digit with its respective symbol
+    else:
+        shifted_password_upper += char
+        
+print("Your password is: ", passwordv1 + shifted_password_upper)
